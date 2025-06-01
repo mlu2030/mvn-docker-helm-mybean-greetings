@@ -6,3 +6,6 @@
 # And then, port-forward the service as follows.
 servicename=$(k get service -l "app={{ .Values.appName }}" --namespace {{ .Values.namespace }} -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward service/{{ .Values.appName }} 8080:8070 --namespace {{ .Values.namespace }}
+
+# Use the following commands to obtain the IP addresses of pods:
+k get pods -l tier=frontend -o custom-columns=POD_IP:.status.podIPs
