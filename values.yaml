@@ -1,0 +1,12 @@
+appName: webapp2-greetings
+
+namespace: default
+
+configmap:
+  name: cm-1
+  data:
+    CUSTOM_HEADER: "Helm is Awesome - Deployment by 'helm'"
+
+image:
+  name: mlu2030/mvn-dkr-greetings
+  tag:  0.0.1
