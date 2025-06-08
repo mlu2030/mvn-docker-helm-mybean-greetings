@@ -32,7 +32,7 @@ spec:
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8070
-        volumMounts:
+        volumeMounts:
           - mountPath: /etc/config
             name: {{ .Values.configmap.volumeName }}
         envFrom:
