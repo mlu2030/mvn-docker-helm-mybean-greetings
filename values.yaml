@@ -3,9 +3,10 @@ appName: webapp2-greetings
 namespace: default
 
 configmap:
-  name: cm-1
+  name: cm-2
+  volumeName: configmap-volume
   data:
-    CUSTOM_HEADER: "Helm is Awesome - Deployment by 'helm'"
+    CUSTOM_HEADER: "Helm is Awesome - Deploy by 'helm'"
 
 image:
   name: mlu2030/mvn-dkr-greetings

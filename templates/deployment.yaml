@@ -17,11 +17,24 @@ spec:
         app: {{ .Values.appName }}
         tier: frontend
     spec: # Pod spec
+      volumes:
+        # 'name' here must match the nae
+        # specified in the volume mount
+        - name: {{ .Values.configmap.volumeName }}
+          #
+          configMap:
+            # 'name' here must match the name
+            # specified in the ConfigMap's YAML
+            name: {{ .Values.configmap.name }}
+
       containers:
       - name: mycontainer
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8070
+        volumMounts:
+          - mountPath: /etc/config
+            name: {{ .Values.configmap.volumeName }}
         envFrom:
         - configMapRef:
             name: {{ .Values.configmap.name }}
