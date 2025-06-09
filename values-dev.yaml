@@ -1,5 +1,5 @@
-namespace: dev
+namespace: ns-that-does-not-exist
 
 configmap:
   data:
-    CUSTOM_HEADER: "Welcome to Dev!  Helm is Awesome"
+    CUSTOM_HEADER: "Welcome to Dev!  Am I getting anywhere?"

@@ -35,9 +35,9 @@ spec:
         volumeMounts:
           - mountPath: /etc/config
             name: {{ .Values.configmap.volumeName }}
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.configmap.name }}
+        # envFrom:
+        # - configMapRef:
+        #     name: {{ .Values.configmap.name }}
         resources:
           requests:
             memory: "16Mi" 
